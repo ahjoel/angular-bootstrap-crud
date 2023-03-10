@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employes": [
+    {
+      "id": 1,
+      "name": "Ivy Barrett",
+      "email": "ivybarrett@eventix.com",
+      "description": "Nulla occaecat incididunt adipisicing mollit.",
+      "company": "Barkarama"
+    },
+    {
+      "id": 2,
+      "name": "Lewis Cochran",
+      "email": "lewiscochran@barkarama.com",
+      "description": "Fugiat dolore proident Lorem sit minim magna incididunt adipisicing.",
+      "company": "Exiand"
+  },
+  {
+      "id": 3,
+      "name": "Witt Knox",
+      "email": "wittknox@exiand.com",
+      "description": "Fugiat amet labore magna magna non adipisicing et id.",
+      "company": "Cytrak"
+  },
+  {
+      "id": 4,
+      "name": "Leon Wilder",
+      "email": "leonwilder@cytrak.com",
+      "description": "Ad ea esse officia eiusmod est eiusmod aliqua amet.",
+      "company": "Petigems"
+  }
+  ]
+
+}
