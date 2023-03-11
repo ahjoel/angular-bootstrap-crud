@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 0,
+      "name": "Gilliam Monroe",
+      "email": "gilliammonroe@mantro.com",
+      "phone": "12456",
+      "website": "Eventix"
+    },
+    {
+      "name": "Ivy Barrett",
+      "email": "ivybarrett@eventix.com",
+      "phone": "124568",
+      "website": "Barkarama.fr",
+      "id": 1
+    },
+    {
+      "name": "Lewis Cochran",
+      "email": "lewiscochran@barkarama.com",
+      "phone": "124566",
+      "website": "Exiand.com",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Witt Knox",
+      "email": "wittknox@exiand.com",
+      "phone": "12456",
+      "website": "Cytrak.com"
+    }
+  ]
+}
