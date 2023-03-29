@@ -1,3 +1,4 @@
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 // Add these import
 import {FormControl, FormGroup} from '@angular/forms';

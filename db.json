@@ -18,14 +18,14 @@
   },
   "users": [
     {
-      "id": 0,
       "name": "Gilliam Monroe",
       "email": "gilliammonroe@mantro.com",
       "phone": "12456",
-      "website": "Eventix"
+      "website": "Eventix",
+      "id": 0
     },
     {
-      "name": "Ivy Barrett",
+      "name": "Ivy Barrett ToY",
       "email": "ivybarrett@eventix.com",
       "phone": "124568",
       "website": "Barkarama.fr",
