@@ -4,11 +4,13 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { UserserviceService } from '../service/userservice.service';
-
+import { Pipe, PipeTransform } from '@angular/core';
+import { SearchPipe } from '../search.pipe';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
+  providers: [SearchPipe]
 })
 export class UserComponent {
   
@@ -17,11 +19,17 @@ export class UserComponent {
   isedit:boolean=false;
   username:any;
   usernameShow:any;
+  searchText: string;
+  sortBy:string;
 
   constructor(
     private _userService:UserserviceService,
-    private _toast:ToastrService
-  ) {}
+    private _toast:ToastrService,
+    private searchPipe: SearchPipe
+  ) {
+    this.sortBy = '';
+    this.searchText = '';
+  }
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
@@ -31,6 +39,11 @@ export class UserComponent {
        'website': new FormControl()
     })
     this.getData();
+  }
+
+  // Filtre sur le nom
+  filteredItems(): any[] {
+    return this.searchPipe.transform(this.data, this.searchText);
   }
 
   getData(){
@@ -84,6 +97,17 @@ export class UserComponent {
       this.showError();
     })
   }
+
+  // onSearch() {
+  //   // const isData = this.getData();
+  //   if (this.sortBy == "Name") {
+  //     const filteredData = this.data.filter((u:any) => u.name.toLocaleLowerCase().startsWith(this.searchText.toLocaleLowerCase()))
+  //     this.data = filteredData;
+  //   }else {
+  //     this.getData();
+  //   }
+    
+  // }
 
   public showSuccess():void {
     this._toast.success('User Data Successfully Added', this.username);

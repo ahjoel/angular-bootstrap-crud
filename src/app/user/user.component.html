@@ -13,6 +13,24 @@
 <br><br>
 <div class="container">
     <div class="row">
+            <div class="col-md-3"></div>
+            
+            <div class="col-md-3">
+                <select [(ngModel)]="sortBy" class="form-control">
+                    <option value="">Select</option>
+                    <option>Name</option>
+                    <option>Email</option>
+                    <option>Website</option>
+                </select>
+            </div>
+            
+            <div class="col-md-3">
+                <input type="text" [(ngModel)]="searchText" class="form-control" />
+            </div>
+    </div>
+    <br>
+    <div class="row">
+
         <div class="col-sm-12">
             <table>
                 <tr>
@@ -24,7 +42,7 @@
                     <th>Action</th>
                 </tr>
 
-                <tr *ngFor="let user of data; let i = index;">
+                <tr *ngFor="let user of data| search: searchText; let i = index;">
                     <td>{{i+1}}</td>
                     <td>{{user.name}}</td>
                     <td>{{user.email}}</td>

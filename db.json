@@ -18,7 +18,7 @@
   },
   "users": [
     {
-      "name": "Gilliam Monroe",
+      "name": "Gilliam Monro",
       "email": "gilliammonroe@mantro.com",
       "phone": "12456",
       "website": "Eventix",
@@ -39,11 +39,11 @@
       "id": 2
     },
     {
-      "id": 3,
-      "name": "Witt Knox",
+      "name": "Witt Knox1",
       "email": "wittknox@exiand.com",
       "phone": "12456",
-      "website": "Cytrak.com"
+      "website": "Cytrak.com",
+      "id": 3
     }
   ]
 }
