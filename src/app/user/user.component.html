@@ -13,20 +13,13 @@
 <br><br>
 <div class="container">
     <div class="row">
-            <div class="col-md-3"></div>
-            
-            <div class="col-md-3">
-                <!-- <select [(ngModel)]="sortBy" class="form-control">
-                    <option value="">Select</option>
-                    <option>Name</option>
-                    <option>Email</option>
-                    <option>Website</option>
-                </select> -->
+        <div class="col-sm-3 col-md-8">
+            <div class="col-md-6">
+                <label>
+                    <input type="text" [(ngModel)]="searchText" placeholder="Search on Name" class="form-control" />
+                </label>
             </div>
-            
-            <div class="col-md-3">
-                <input type="text" [(ngModel)]="searchText" placeholder="Search on Name" class="form-control" />
-            </div>
+        </div>
     </div>
     <br>
     <div class="row">

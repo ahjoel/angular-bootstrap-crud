@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { UserserviceService } from '../service/userservice.service';
-import { Pipe, PipeTransform } from '@angular/core';
 import { SearchPipe } from '../search.pipe';
 @Component({
   selector: 'app-user',
