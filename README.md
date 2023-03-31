@@ -5,7 +5,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Features : 
 
 - CRUD with modal form
+
 - Search on table
+
+- Sort on table
+
 ## Development server
 
 - After clone this project in your local environnement

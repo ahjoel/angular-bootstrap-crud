@@ -16,16 +16,16 @@
             <div class="col-md-3"></div>
             
             <div class="col-md-3">
-                <select [(ngModel)]="sortBy" class="form-control">
+                <!-- <select [(ngModel)]="sortBy" class="form-control">
                     <option value="">Select</option>
                     <option>Name</option>
                     <option>Email</option>
                     <option>Website</option>
-                </select>
+                </select> -->
             </div>
             
             <div class="col-md-3">
-                <input type="text" [(ngModel)]="searchText" class="form-control" />
+                <input type="text" [(ngModel)]="searchText" placeholder="Search on Name" class="form-control" />
             </div>
     </div>
     <br>
@@ -35,7 +35,7 @@
             <table>
                 <tr>
                     <th>Id</th>
-                    <th>Name</th>
+                    <th (click)="sortBy('id')">Name {{sortIcon('id')}}</th>
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Website</th>

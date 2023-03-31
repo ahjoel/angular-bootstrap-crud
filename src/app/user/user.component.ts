@@ -20,14 +20,16 @@ export class UserComponent {
   username:any;
   usernameShow:any;
   searchText: string;
-  sortBy:string;
+  // sortBy:string;
+  sortProperty: string = 'id';
+  sortOrder = 1;
 
   constructor(
     private _userService:UserserviceService,
     private _toast:ToastrService,
     private searchPipe: SearchPipe
   ) {
-    this.sortBy = '';
+    // this.sortBy = '';
     this.searchText = '';
   }
 
@@ -41,17 +43,44 @@ export class UserComponent {
     this.getData();
   }
 
-  // Filtre sur le nom
+  // Recherche avec sur le nom
   filteredItems(): any[] {
     return this.searchPipe.transform(this.data, this.searchText);
   }
 
+  // Tri par colonne
+  sortBy(property: string) {
+    this.sortOrder = property === this.sortProperty ? (this.sortOrder * -1) : 1;
+    this.sortProperty = property;
+    this.data = [...this.data.sort((a: any, b: any) => {
+        // sort comparison function
+        let result = 0;
+        if (a[property] < b[property]) {
+            result = -1;
+        }
+        if (a[property] > b[property]) {
+            result = 1;
+        }
+        return result * this.sortOrder;
+    })];
+  }
+
+  // Affichage de l'icone selon le tri
+  sortIcon(property: string) {
+      if (property === this.sortProperty) {
+          return this.sortOrder === 1 ? '☝️' : '👇';
+      }
+      return '';
+  }
+
+  // Affichage des données
   getData(){
     this._userService.getData().subscribe(res=>{
       this.data = res;
     })
   }
 
+  // Modification d'une donnée
   update(user:any){
     this.userForm.id = user.id;
     this.usernameShow = this.userForm.value.name;
@@ -61,6 +90,7 @@ export class UserComponent {
     })
   }
 
+  // Enregistrement d'une donnée
   sendata(userForm:FormGroup){
     this.data.push(this.userForm.value);
     this.username = this.userForm.value.name;
@@ -74,11 +104,13 @@ export class UserComponent {
 
   }
 
+  // Changement de mode pour le modal
   addmodel(){
     this.isedit=false;
     this.userForm.reset();
   }
 
+  // Chargement des éléments du formulaire pour la modification
   edit(i:any, user:any){
     this.isedit=true;
     this.userForm.id = user.id;
@@ -90,6 +122,7 @@ export class UserComponent {
     })
   }
 
+  // Suppression d'une donnée
   delete(index:number, user:any){
     this.userForm.id = user.id;
     this._userService.delete(this.userForm.id, user).subscribe(res=>{
